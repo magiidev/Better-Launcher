@@ -1,0 +1,53 @@
+.bg-image
+{
+    -fx-background-image: url("/images/background.jpg");
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
+
+.main-panel
+{
+    -fx-background-color: #D7D3BF;
+
+    /* Rayon de bordure appliqué seulement aux coins supérieurs */
+    -fx-background-radius: 10px 10px 0 0; /* Top-left, top-right, bottom-right, bottom-left */
+
+    /*-fx-border-color: #181818; Optionnel, si tu veux une bordure visible */
+    -fx-border-radius: 10px 10px 0 0;
+    -fx-border-width: 5px; /* Largeur de la bordure */
+}
+
+
+.bottom-panel
+{
+    -fx-background-color: #C1BAA1;
+    -fx-background-radius: 0 0 10px 10px; /* Top-left, top-right, bottom-right, bottom-left */
+
+    -fx-border-radius: 0 0 10px 10px;
+    -fx-border-width: 5px; /* Largeur de la bordure */
+
+    -fx-opacity: 0.7;
+}
+
+.no-account
+{
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+}
+
+.register-here
+{
+    -fx-text-fill: #69a7ed;
+    -fx-font-size: 14px;
+}
+
+.login-btn {
+    -fx-background-radius: 10px;
+    -fx-font-size: 16px;
+    -fx-text-fill: #F5F5F5;
+    -fx-background-color: #C1BAA1;
+}
+
+.login-btn:hover {
+    -fx-background-color: #A59D84;
+}

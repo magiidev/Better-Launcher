@@ -1,0 +1,58 @@
+.mods-layout {
+    -fx-background-color: #D7D3BF;
+}
+
+.mods-title {
+    -fx-text-fill: white;
+}
+
+.instance-box {
+    -fx-background-color: #C1BAA1;
+    -fx-padding: 5px;            /* Padding inside the ComboBox */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;         /* Font size */
+    -fx-font-family: "Arial";    /* Font family */
+}
+
+.instance-box .arrow-button .arrow {
+    -fx-background-color: #D7D3BF;
+}
+
+.instance-box .list-view .list-cell {
+    -fx-text-fill: white;
+}
+
+.instance-box .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: #C1BAA1;
+}
+
+.instance-box .list-view {
+    -fx-background-color: #D7D3BF;
+}
+
+.instance-box .list-cell:hover {
+    -fx-text-fill: black;
+    -fx-background-color: #D7D3BF;
+}
+
+.instance-box .list-view .list-cell:focused {
+  -fx-text-fill: black;
+}
+
+.scroll-pane{
+   -fx-background-color:transparent;
+}
+
+
+.scroll-pane > .viewport {  //not .scrollpane but .scroll-pane
+   -fx-background-color: transparent;
+}
+
+.search-box
+ {
+    -fx-background-color: #C1BAA1;
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: white;
+}

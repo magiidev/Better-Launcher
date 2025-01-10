@@ -1,0 +1,85 @@
+.box-pane {
+    -fx-background-color: #D7D3BF;
+}
+
+.play-btn {
+    -fx-background-radius: 10px;
+    -fx-font-size: 16px;
+    -fx-text-fill: #F5F5F5;
+    -fx-background-color: #C1BAA1;
+}
+
+.play-icon {
+    -fx-fill: white;
+}
+
+.play-btn:hover {
+    -fx-background-color: #A59D84;
+}
+
+.download-progress {
+    -fx-max-width: 1000;
+    -fx-pref-width: 1000;
+    -fx-min-width: 100;
+    -fx-min-height: 10px;
+    -fx-max-height: 10px;
+}
+
+.download-progress > .bar {
+    -fx-background-color: #A59D84;
+    -fx-background-insets: 0;
+    -fx-background-radius: 30px;
+}
+
+.download-progress > .track {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-background-radius: 30px;
+}
+
+.download-status {
+    -fx-text-alignment: center;
+    -fx-text-fill: rgb(10, 12, 12);
+}
+
+.instance-box {
+    -fx-background-color: #C1BAA1;
+    -fx-padding: 5px;            /* Padding inside the ComboBox */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;         /* Font size */
+    -fx-font-family: "Arial";    /* Font family */
+}
+
+.instance-box .arrow-button .arrow {
+    -fx-background-color: #D7D3BF;
+}
+
+.instance-box .list-view .list-cell {
+    -fx-text-fill: white;
+}
+
+.instance-box .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: #C1BAA1;
+}
+
+.instance-box .list-view {
+    -fx-background-color: #D7D3BF;
+}
+
+.instance-box .list-cell:hover {
+    -fx-text-fill: black;
+    -fx-background-color: #D7D3BF;
+}
+
+.instance-box .list-view .list-cell:focused {
+  -fx-text-fill: black;
+}
+
+.instance-box .track {
+    -fx-background-color: #D7D3BF;
+}
+
+.instance-box .thumb {
+    -fx-background-color: #A59D84;
+}

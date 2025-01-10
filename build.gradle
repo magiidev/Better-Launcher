@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'java-library'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+}
+
+apply plugin: 'org.openjfx.javafxplugin'
+
+group = 'com.aikodev'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        url = 'https://litarvan.github.io/maven'
+        name = 'LitarvanMaven'
+    }
+
+    maven {
+        url = 'https://jitpack.io'
+        name = 'JitPack'
+    }
+}
+
+dependencies {
+    implementation 'fr.litarvan:openauth:1.1.6'
+    implementation 'fr.flowarg:materialdesignfontfx:7.2.96-2'
+    implementation 'fr.flowarg:azuljavadownloader:1.0.2'
+
+    implementation 'fr.flowarg:flowupdater:1.9.2'
+    implementation 'fr.flowarg:openlauncherlib:3.2.11'
+
+    implementation 'com.github.goxr3plus:FX-BorderlessScene:4+'
+    implementation 'com.github.oshi:oshi-core:5+'
+
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.16'
+    implementation 'org.json:json:20230227'
+    implementation 'org.jsoup:jsoup:1.15.3'
+}
+
+javafx {
+    version = "21"
+    modules = ['javafx.controls', 'javafx.fxml', 'javafx.web', 'javafx.swing']
+}
+
+application {
+    getMainClass().set('com.aikodev.netheritelauncher.Main')
+}
+
+compileJava {
+    options.encoding = "UTF-8"
+}
