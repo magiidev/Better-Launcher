@@ -86,7 +86,6 @@ public class CurseForgeFetcher {
                 }
             }
 
-            // Passer à la page suivante
             index += pageSize;
         }
 
@@ -115,11 +114,9 @@ public class CurseForgeFetcher {
             if (response.statusCode() == 200) {
                 JSONObject jsonResponse = new JSONObject(response.body());
 
-                // Vérifie si le champ "data" est présent et est un objet JSON
                 if (jsonResponse.has("data")) {
                     JSONObject data = jsonResponse.getJSONObject("data");
 
-                    // Retourne le nom du mod ou "Unknown" si le champ est absent
                     return data.optString("name", "Unknown");
                 } else {
                 }
@@ -197,7 +194,6 @@ public class CurseForgeFetcher {
                             for (int j = 0; j < filesIndexes.length(); j++) {
                                 JSONObject fileIndex = filesIndexes.getJSONObject(j);
 
-                                // Vérifiez si la version du fichier correspond à la version actuelle
                                 JSONArray gameVersions = fileIndex.optJSONArray("gameVersions");
                                 boolean isVersionCompatible = false;
 
@@ -210,20 +206,17 @@ public class CurseForgeFetcher {
                                     }
                                 }
 
-                                // Si la version est compatible, vérifiez les dépendances
                                 if (isVersionCompatible && fileIndex.has("dependencies")) {
                                     JSONArray dependencies = fileIndex.getJSONArray("dependencies");
 
                                     for (int k = 0; k < dependencies.length(); k++) {
                                         JSONObject dependency = dependencies.getJSONObject(k);
 
-                                        // Récupérer le premier ID de dépendance valide
                                         dependencyId = dependency.optInt("modId", -1);
                                         break;
                                     }
                                 }
 
-                                // Si une version incompatible est détectée, définissez dependencyId à -1
                                 if (!isVersionCompatible) {
                                     dependencyId = -1;
                                     break;
@@ -257,13 +250,15 @@ public class CurseForgeFetcher {
         String formattedSearchTerm = search.replace(" ", "+");
 
         String url = String.format(
-                "https://api.curseforge.com/v1/mods/search?gameId=432&classId=6&gameVersion=%s&modLoaderType=%s&search=%s&index=%d&pageSize=%d",
-                gameVersion,
+                "https://api.curseforge.com/v1/mods/search?gameId=432&index=%d&classId=6&modLoaderType=%s&searchFilter=%s&gameVersion=%s&pageSize=%d&sortField=1&sortOrder=desc",
+                startIndex,
                 modLoader,
                 formattedSearchTerm,
-                startIndex,
+                gameVersion,
                 pageSize
         );
+
+        System.out.println(url);
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))

@@ -56,8 +56,8 @@ public class Login extends Panel
 
         loginPanel.setMaxWidth(400);
         loginPanel.setMinWidth(400);
-        loginPanel.setMaxHeight(580);
-        loginPanel.setMinHeight(580);
+        loginPanel.setMaxHeight(295);
+        loginPanel.setMinHeight(295);
 
         setCanTakeAllSize(loginPanel);
         setAlignement(loginPanel, VPos.CENTER, HPos.CENTER);
@@ -106,105 +106,42 @@ public class Login extends Panel
         bottomPanel.getChildren().addAll(noAccount, registerHere);
         this.layout.getChildren().add(loginPanel);
 
-        Label connectLabel = new Label("Login");
-        setCanTakeAllSize(connectLabel);
-        setAlignement(connectLabel, VPos.TOP, HPos.CENTER);
-        connectLabel.setStyle("-fx-text-fill: #ffffff; -fx-font-size: 24px;");
-        connectLabel.setTranslateY(15);
+        TextField userField = new TextField();
+        setCanTakeAllSize(userField);
+        setAlignement(userField, VPos.TOP, HPos.LEFT);
+        userField.setStyle("-fx-background-color: #C1BAA1; -fx-font-size: 16px; -fx-text-fill: white; -fx-prompt-text-fill: white;");
+        userField.setPromptText("Username (for crack)");
+        userField.setMaxWidth(325);
+        userField.setMaxHeight(40);
+        userField.setTranslateY(70);
+        userField.setTranslateX(37.5);
 
-        Separator connectSeparator = new Separator();
-        setCanTakeAllSize(connectSeparator);
-        setAlignement(connectSeparator, VPos.TOP, HPos.CENTER);
-        connectSeparator.setTranslateY(60);
-        connectSeparator.setMinWidth(325);
-        connectSeparator.setMaxWidth(325);
-        connectSeparator.setStyle("-fx-background-color: #4B5945; -fx-opacity: 0.5;");
-
-        Label emaiLabel = new Label("E-mail");
-        setCanTakeAllSize(emaiLabel);
-        setAlignement(emaiLabel, VPos.TOP, HPos.LEFT);
-        emaiLabel.setStyle("-fx-text-fill: #ffffff; -fx-font-size: 14px;");
-        emaiLabel.setTranslateY(110);
-        emaiLabel.setTranslateX(37.5);
-
-        TextField emailField = new TextField();
-        setCanTakeAllSize(emailField);
-        setAlignement(emailField, VPos.TOP, HPos.LEFT);
-        emailField.setStyle("-fx-background-color: #A59D84; -fx-font-size: 16px; -fx-text-fill: e5e5e5;");
-        emailField.setMaxWidth(325);
-        emailField.setMaxHeight(40);
-        emailField.setTranslateY(140);
-        emailField.setTranslateX(37.5);
-
-        Separator emailSeparator = new Separator();
-        setCanTakeAllSize(emailSeparator);
-        setAlignement(emailSeparator, VPos.TOP, HPos.CENTER);
-        emailSeparator.setTranslateY(181);
-        emailSeparator.setMinWidth(325);
-        emailSeparator.setMaxWidth(325);
-        emailSeparator.setMaxHeight(1);
-        emailSeparator.setTranslateX(5);
-        emailSeparator.setStyle("-fx-opacity: 0.4; -fx-background-color: #4B5945;");
-
-        Label passwordLabel = new Label("Password");
-        setCanTakeAllSize(passwordLabel);
-        setAlignement(passwordLabel, VPos.TOP, HPos.LEFT);
-        passwordLabel.setStyle("-fx-text-fill: #ffffff; -fx-font-size: 14px;");
-        passwordLabel.setTranslateY(200);
-        passwordLabel.setTranslateX(37.5);
-
-        PasswordField passwordField = new PasswordField();
-        setCanTakeAllSize(passwordField);
-        setAlignement(passwordField, VPos.TOP, HPos.LEFT);
-        passwordField.setStyle("-fx-background-color: #A59D84; -fx-font-size: 16px; -fx-text-fill: e5e5e5;");
-        passwordField.setMaxWidth(325);
-        passwordField.setMaxHeight(40);
-        passwordField.setTranslateY(230);
-        passwordField.setTranslateX(37.5);
-
-        Separator passwordSeparator = new Separator();
-        setCanTakeAllSize(passwordSeparator);
-        setAlignement(passwordSeparator, VPos.TOP, HPos.CENTER);
-        passwordSeparator.setTranslateY(271);
-        passwordSeparator.setMinWidth(325);
-        passwordSeparator.setMaxWidth(325);
-        passwordSeparator.setMaxHeight(1);
-        passwordSeparator.setTranslateX(5);
-        passwordSeparator.setStyle("-fx-opacity: 0.4; -fx-background-color: #4B5945;");
-
-        Label forgotPasswordLabel = new Label("Forgot password?");
-        setCanTakeAllSize(forgotPasswordLabel);
-        setAlignement(forgotPasswordLabel, VPos.CENTER, HPos.LEFT);
-        forgotPasswordLabel.setStyle("-fx-text-fill: #ffffff; -fx-font-size: 12px;");
-        forgotPasswordLabel.setUnderline(true);
-        forgotPasswordLabel.setTranslateX(37.5);
-        forgotPasswordLabel.setTranslateY(35);
-        forgotPasswordLabel.setOnMouseEntered(e-> this.layout.setCursor(Cursor.HAND));
-        forgotPasswordLabel.setOnMouseExited(e-> this.layout.setCursor(Cursor.DEFAULT));
-        forgotPasswordLabel.setOnMouseClicked(e->
+        Button crackedButton = new Button("Cracked");
+        setCanTakeAllSize(crackedButton);
+        setAlignement(crackedButton, VPos.CENTER, HPos.LEFT);
+        crackedButton.setTranslateX(37.5);
+        crackedButton.setTranslateY(-80);
+        crackedButton.setMinWidth(325);
+        crackedButton.setMinHeight(35);
+        crackedButton.getStyleClass().add("login-btn");
+        crackedButton.setOnMouseEntered(e-> this.layout.setCursor(Cursor.HAND));
+        crackedButton.setOnMouseExited(e-> this.layout.setCursor(Cursor.DEFAULT));
+        crackedButton.setOnMouseClicked(e->
         {
-            LauncherUtils.openURL("https://support.microsoft.com/en-us/account-billing/reset-a-forgotten-microsoft-account-password-eff4f067-5042-c1a3-fe72-b04d60556c37");
-        });
+            if(userField.getText().isEmpty())
+            {
+                new Alert(Alert.AlertType.ERROR, "Username field cannot be empty!").showAndWait();
+            }
 
-        Button connectionButton = new Button("Connect");
-        setCanTakeAllSize(connectionButton);
-        setAlignement(connectionButton, VPos.CENTER, HPos.LEFT);
-        connectionButton.setTranslateX(37.5);
-        connectionButton.setTranslateY(80);
-        connectionButton.setMinWidth(325);
-        connectionButton.setMinHeight(50);
-        connectionButton.getStyleClass().add("login-btn");
-        connectionButton.setOnMouseEntered(e-> this.layout.setCursor(Cursor.HAND));
-        connectionButton.setOnMouseExited(e-> this.layout.setCursor(Cursor.DEFAULT));
-        connectionButton.setOnMouseClicked(e->
-        {
-            authenticate(emailField, passwordField);
+            offlineAuth.set(true);
+
+            authenticate(userField, null);
         });
 
         Separator chooseConnectSeparator = new Separator();
         setCanTakeAllSize(chooseConnectSeparator);
         setAlignement(chooseConnectSeparator, VPos.CENTER, HPos.CENTER);
-        chooseConnectSeparator.setTranslateY(160);
+        chooseConnectSeparator.setTranslateY(10);
         chooseConnectSeparator.setMinWidth(325);
         chooseConnectSeparator.setMaxWidth(325);
         chooseConnectSeparator.setStyle("-fx-opacity: 30%; -fx-background-color: #4B5945;");
@@ -212,7 +149,7 @@ public class Login extends Panel
         Button chooseConnection = new Button("LOGIN WITH");
         setCanTakeAllSize(chooseConnection);
         setAlignement(chooseConnection, VPos.CENTER, HPos.CENTER);
-        chooseConnection.setTranslateY(160);
+        chooseConnection.setTranslateY(10);
         chooseConnection.setStyle("-fx-background-color: #D7D3BF; -fx-font-size: 14px; -fx-text-fill: #fff;");
 
         Image logoMicrosoft = new Image(Main.class.getResource("/images/microsoft.png").toExternalForm());
@@ -223,7 +160,7 @@ public class Login extends Panel
         Button microsoftButton = new Button();
         setCanTakeAllSize(microsoftButton);
         setAlignement(microsoftButton, VPos.CENTER, HPos.CENTER);
-        microsoftButton.setTranslateY(210);
+        microsoftButton.setTranslateY(60);
         microsoftButton.setMaxWidth(250);
         microsoftButton.setMinHeight(40);
         microsoftButton.setStyle("-fx-background-color: #fff; -fx-border-radius: 0px; -fx-background-insets: 0px; -fx-font-size: 14px; -fx-text-fill: #fff;");
@@ -235,39 +172,8 @@ public class Login extends Panel
             authenticateMS();
         });
 
-        CheckBox crackCheckBox = new CheckBox("Cracked");
-        setCanTakeAllSize(crackCheckBox);
-        setAlignement(crackCheckBox, VPos.TOP, HPos.LEFT);
-        crackCheckBox.setMinWidth(70);
-        crackCheckBox.setMinHeight(30);
-        crackCheckBox.setTranslateY(70);
-        crackCheckBox.setTranslateX(38);
-        crackCheckBox.setStyle("-fx-background-color: #D7D3BF; -fx-border-radius: 0px; -fx-background-insets: 0px; -fx-font-size: 14px; -fx-text-fill: #fff;");
-        crackCheckBox.selectedProperty().addListener((observable, oldValue, isSelected) -> {
-            if (isSelected)
-            {
-                offlineAuth.set(isSelected);
-
-                mainPanel.getChildren().removeAll(passwordField, passwordLabel, forgotPasswordLabel);
-                emaiLabel.setText("Pseudo");
-                emaiLabel.setTranslateY(150);
-                emailField.setTranslateY(180);
-                emailSeparator.setTranslateY(220);
-            } else {
-                if (!mainPanel.getChildren().contains(passwordField))
-                {
-                    mainPanel.getChildren().addAll(passwordLabel, passwordField, forgotPasswordLabel);
-                    emaiLabel.setText("E-mail");
-                    emaiLabel.setTranslateY(110);
-                    emailField.setTranslateY(140);
-                    emailSeparator.setTranslateY(181);
-                }
-            }
-        });
-
         mainPanel.getChildren().addAll
-        (connectLabel, connectSeparator, emaiLabel, emailField, passwordLabel, passwordField, forgotPasswordLabel,
-                connectionButton, chooseConnectSeparator, chooseConnection, microsoftButton, crackCheckBox);
+        (crackedButton, userField, chooseConnectSeparator, chooseConnection, microsoftButton);
     }
 
     public void authenticate(TextField emaiField, PasswordField passwordField)
