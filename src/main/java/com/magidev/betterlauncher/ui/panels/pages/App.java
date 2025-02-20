@@ -5,7 +5,7 @@ import com.magidev.betterlauncher.ui.PanelManager;
 import com.magidev.betterlauncher.ui.panel.Panel;
 import com.magidev.betterlauncher.ui.panels.pages.content.*;
 import com.magidev.betterlauncher.utils.Constants;
-import com.magidev.betterlauncher.utils.LanguageManager;
+import com.magidev.betterlauncher.ui.utils.lang.LanguageManager;
 import fr.flowarg.materialdesignfontfx.MaterialDesignIcon;
 import fr.flowarg.materialdesignfontfx.MaterialDesignIconView;
 import fr.theshark34.openlauncherlib.util.Saver;

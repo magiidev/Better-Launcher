@@ -6,7 +6,7 @@ import com.magidev.betterlauncher.game.instance.InstanceManager;
 import com.magidev.betterlauncher.game.fetchers.CurseForgeFetcher;
 import com.magidev.betterlauncher.game.mod.ModLoader;
 import com.magidev.betterlauncher.ui.PanelManager;
-import com.magidev.betterlauncher.utils.LanguageManager;
+import com.magidev.betterlauncher.ui.utils.lang.LanguageManager;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.geometry.Insets;

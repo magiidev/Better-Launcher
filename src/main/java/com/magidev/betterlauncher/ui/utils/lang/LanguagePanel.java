@@ -1,11 +1,11 @@
-package com.magidev.betterlauncher.ui.panels.pages;
+package com.magidev.betterlauncher.ui.utils.lang;
 
 import com.magidev.betterlauncher.Launcher;
 import com.magidev.betterlauncher.Main;
 import com.magidev.betterlauncher.ui.PanelManager;
 import com.magidev.betterlauncher.ui.panel.Panel;
-import com.magidev.betterlauncher.utils.LanguageManager;
-import com.sun.javafx.binding.OrElseBinding;
+import com.magidev.betterlauncher.ui.panels.pages.App;
+import com.magidev.betterlauncher.ui.panels.pages.Login;
 import fr.theshark34.openlauncherlib.util.Saver;
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
@@ -13,7 +13,6 @@ import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 

@@ -2,9 +2,9 @@ package com.magidev.betterlauncher.ui.panels.pages.content;
 
 import com.magidev.betterlauncher.Launcher;
 import com.magidev.betterlauncher.ui.PanelManager;
-import com.magidev.betterlauncher.ui.panels.pages.App;
-import com.magidev.betterlauncher.ui.panels.pages.LanguagePanel;
-import com.magidev.betterlauncher.utils.LanguageManager;
+import com.magidev.betterlauncher.ui.utils.lang.LanguagePanel;
+import com.magidev.betterlauncher.ui.utils.lang.LanguageManager;
+import com.magidev.betterlauncher.ui.utils.theme.ThemePanel;
 import fr.flowarg.materialdesignfontfx.MaterialDesignIcon;
 import fr.flowarg.materialdesignfontfx.MaterialDesignIconView;
 import fr.theshark34.openlauncherlib.util.Saver;
@@ -62,12 +62,12 @@ public class Settings extends ContentPanel {
         title.setTranslateX(25d);
         contentPane.getChildren().add(title);
 
-        // Bouton Languages
+        // Languages Button
         var lang = new MaterialDesignIconView<>(MaterialDesignIcon.T.TRANSLATE);
         lang.setFill(Color.WHITE);
 
         Button languagesBtn = new Button(LanguageManager.get("languages"));
-        languagesBtn.getStyleClass().add("languages-btn");
+        languagesBtn.getStyleClass().add("btn");
         setCanTakeAllSize(languagesBtn);
         setTop(languagesBtn);
         languagesBtn.setTranslateX(25d);
@@ -78,6 +78,23 @@ public class Settings extends ContentPanel {
             this.panelManager.showPanel(new LanguagePanel());
         });
         contentPane.getChildren().add(languagesBtn);
+
+        // Theme Button
+        var theme = new MaterialDesignIconView<>(MaterialDesignIcon.T.THEME_LIGHT_DARK);
+        theme.setFill(Color.WHITE);
+
+        Button themesBtn = new Button(LanguageManager.get("themes"));
+        themesBtn.getStyleClass().add("btn");
+        setCanTakeAllSize(themesBtn);
+        setTop(themesBtn);
+        themesBtn.setTranslateX(150d);
+        themesBtn.setTranslateY(100d);
+        themesBtn.setGraphic(theme);
+        themesBtn.setCursor(Cursor.HAND);
+        themesBtn.setOnMouseClicked(e -> {
+            this.panelManager.showPanel(new ThemePanel());
+        });
+        contentPane.getChildren().add(themesBtn);
 
         // RAM
         Label ramLabel = new Label(LanguageManager.get("max-ram"));

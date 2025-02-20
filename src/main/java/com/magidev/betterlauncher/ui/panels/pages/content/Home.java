@@ -7,7 +7,7 @@ import com.magidev.betterlauncher.game.utils.JavaDownloader;
 import com.magidev.betterlauncher.game.instance.Instance;
 import com.magidev.betterlauncher.game.instance.InstanceManager;
 import com.magidev.betterlauncher.ui.PanelManager;
-import com.magidev.betterlauncher.utils.LanguageManager;
+import com.magidev.betterlauncher.ui.utils.lang.LanguageManager;
 import fr.flowarg.flowupdater.download.DownloadList;
 import fr.flowarg.flowupdater.download.IProgressCallback;
 import fr.flowarg.flowupdater.download.Step;

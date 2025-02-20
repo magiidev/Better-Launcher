@@ -1,4 +1,4 @@
-package com.magidev.betterlauncher.utils;
+package com.magidev.betterlauncher.ui.utils.lang;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -13,9 +13,6 @@ public class LanguageManager {
         addLanguage("English", "lang/english.properties");
         addLanguage("French", "lang/french.properties");
         addLanguage("Spanish", "lang/spanish.properties");
-   //     addLanguage("Japanese", "lang/japanese.properties");
-  //      addLanguage("Korean", "lang/korean.properties");
-   //     addLanguage("Chinese", "lang/chinese.properties");
     }
 
     private static void addLanguage(String name, String filePath) {
@@ -25,9 +22,7 @@ public class LanguageManager {
             if (currentLanguage == null) {
                 currentLanguage = lang; // Set the first added language as default
             }
-            System.out.println("Language added: " + name);
         } catch (IOException e) {
-            System.err.println("Error loading file: " + filePath);
         }
     }
 
@@ -35,7 +30,6 @@ public class LanguageManager {
         if (languages.containsKey(name)) {
             currentLanguage = languages.get(name);
         } else {
-            System.err.println("Language not found: " + name);
         }
     }
 
@@ -56,7 +50,6 @@ public class LanguageManager {
         if (languages.containsKey(name)) {
             return languages.get(name);
         } else {
-            System.err.println("Language not found: " + name);
             return null; // or throw an exception if you prefer
         }
     }

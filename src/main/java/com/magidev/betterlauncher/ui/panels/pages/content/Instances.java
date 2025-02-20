@@ -6,7 +6,7 @@ import com.magidev.betterlauncher.game.fetchers.VersionFetcher;
 import com.magidev.betterlauncher.game.instance.Instance;
 import com.magidev.betterlauncher.game.instance.InstanceManager;
 import com.magidev.betterlauncher.ui.PanelManager;
-import com.magidev.betterlauncher.utils.LanguageManager;
+import com.magidev.betterlauncher.ui.utils.lang.LanguageManager;
 import fr.flowarg.materialdesignfontfx.MaterialDesignIcon;
 import fr.flowarg.materialdesignfontfx.MaterialDesignIconView;
 import fr.theshark34.openlauncherlib.util.Saver;

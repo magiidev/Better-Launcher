@@ -2,10 +2,10 @@ package com.magidev.betterlauncher;
 
 import com.magidev.betterlauncher.ui.PanelManager;
 import com.magidev.betterlauncher.ui.panels.pages.App;
-import com.magidev.betterlauncher.ui.panels.pages.LanguagePanel;
+import com.magidev.betterlauncher.ui.utils.lang.LanguagePanel;
 import com.magidev.betterlauncher.ui.panels.pages.Login;
 import com.magidev.betterlauncher.utils.Constants;
-import com.magidev.betterlauncher.utils.LanguageManager;
+import com.magidev.betterlauncher.ui.utils.lang.LanguageManager;
 import fr.flowarg.flowlogger.ILogger;
 import fr.flowarg.flowlogger.Logger;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthResult;

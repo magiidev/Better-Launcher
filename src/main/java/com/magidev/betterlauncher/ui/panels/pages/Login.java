@@ -4,7 +4,7 @@ import com.magidev.betterlauncher.Launcher;
 import com.magidev.betterlauncher.Main;
 import com.magidev.betterlauncher.ui.PanelManager;
 import com.magidev.betterlauncher.ui.panel.Panel;
-import com.magidev.betterlauncher.utils.LanguageManager;
+import com.magidev.betterlauncher.ui.utils.lang.LanguageManager;
 import com.magidev.betterlauncher.utils.LauncherUtils;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthResult;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthenticationException;

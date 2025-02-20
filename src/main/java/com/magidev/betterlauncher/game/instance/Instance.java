@@ -25,21 +25,6 @@ public class Instance
         this.modloader = modloader;
     }
 
-//    public void createInstanceDirectory()
-//    {
-//        Path instanceDir = Paths.get(Launcher.getInstance().getInstanceDir().toString(), this.name);
-//
-//        try
-//        {
-//            if(!Files.exists(instanceDir))
-//            {
-//                Files.createDirectory(instanceDir);
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
     public void downloadCurseMod(Mod mod) throws Exception
     {
         if (!Files.exists(Paths.get(getInstanceDir().toString(), "/mods/" + mod.getName())))

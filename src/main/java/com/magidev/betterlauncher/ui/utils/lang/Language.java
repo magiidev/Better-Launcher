@@ -1,4 +1,4 @@
-package com.magidev.betterlauncher.utils;
+package com.magidev.betterlauncher.ui.utils.lang;
 
 import java.io.FileInputStream;
 import java.io.IOException;
