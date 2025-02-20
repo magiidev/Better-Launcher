@@ -46,7 +46,7 @@ javafx {
 }
 
 application {
-    getMainClass().set('com.aikodev.netheritelauncher.Main')
+    getMainClass().set('com.magidev.betterlauncher.Main')
 }
 
 compileJava {
