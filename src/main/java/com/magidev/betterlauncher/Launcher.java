@@ -4,6 +4,7 @@ import com.magidev.betterlauncher.ui.PanelManager;
 import com.magidev.betterlauncher.ui.panels.pages.App;
 import com.magidev.betterlauncher.ui.utils.lang.LanguagePanel;
 import com.magidev.betterlauncher.ui.panels.pages.Login;
+import com.magidev.betterlauncher.ui.utils.theme.ThemeManager;
 import com.magidev.betterlauncher.utils.Constants;
 import com.magidev.betterlauncher.ui.utils.lang.LanguageManager;
 import fr.flowarg.flowlogger.ILogger;
@@ -84,10 +85,12 @@ public class Launcher extends Application
     {
         this.logger.info("Starting launcher");
 
+        ThemeManager.currentTheme = ThemeManager.getTheme(saver.get("theme"));
+
         panelManager = new PanelManager(this, stage);
         panelManager.init();
 
-        if (this.isUserAlreadyLoggedIn())
+        if (this.isUserAlreadyLoggedIn() && saver.get("lang") != null)
         {
             logger.info("Hello " + authInfos.getUsername());
 

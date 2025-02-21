@@ -51,3 +51,29 @@
 .login-btn:hover {
     -fx-background-color: #A59D84;
 }
+
+.user-field {
+    -fx-background-color: #C1BAA1;
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: white;
+}
+
+.choose-connect-separator {
+    -fx-opacity: 30%;
+    -fx-background-color: #4B5945;
+}
+
+.choose-connection {
+    -fx-background-color: #D7D3BF;
+    -fx-font-size: 14px;
+    -fx-text-fill: #fff;
+}
+
+.microsoft-btn {
+    -fx-background-color: #fff;
+    -fx-border-radius: 0px;
+    -fx-background-insets: 0px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #fff;
+}

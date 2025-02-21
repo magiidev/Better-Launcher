@@ -4,6 +4,7 @@ import com.magidev.betterlauncher.Launcher;
 import com.magidev.betterlauncher.ui.PanelManager;
 import com.magidev.betterlauncher.ui.utils.lang.LanguagePanel;
 import com.magidev.betterlauncher.ui.utils.lang.LanguageManager;
+import com.magidev.betterlauncher.ui.utils.theme.ThemeManager;
 import com.magidev.betterlauncher.ui.utils.theme.ThemePanel;
 import fr.flowarg.materialdesignfontfx.MaterialDesignIcon;
 import fr.flowarg.materialdesignfontfx.MaterialDesignIconView;
@@ -33,7 +34,7 @@ public class Settings extends ContentPanel {
 
     @Override
     public String getStylesheetPath() {
-        return "css/content/settings.css";
+        return "css/content/" + ThemeManager.getCurrentTheme().getName().toLowerCase() + "/settings.css";
     }
 
     @Override
@@ -148,6 +149,7 @@ public class Settings extends ContentPanel {
         final var iconView = new MaterialDesignIconView<>(MaterialDesignIcon.F.FLOPPY);
         iconView.getStyleClass().add("save-icon");
         saveBtn.setGraphic(iconView);
+        saveBtn.setCursor(Cursor.HAND);
         setCanTakeAllSize(saveBtn);
         setBottom(saveBtn);
         setCenterH(saveBtn);

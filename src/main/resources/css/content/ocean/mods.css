@@ -1,0 +1,75 @@
+.mods-layout {
+    -fx-background-color: #6baed6;
+}
+
+.mods-title {
+    -fx-text-fill: white;
+}
+
+.instance-box {
+    -fx-background-color: #4292c6;
+    -fx-padding: 5px;            /* Padding inside the ComboBox */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;         /* Font size */
+    -fx-font-family: "Arial";    /* Font family */
+}
+
+.instance-box .arrow-button .arrow {
+    -fx-background-color: #6baed6;
+}
+
+.instance-box .list-view .list-cell {
+    -fx-text-fill: white;
+}
+
+.instance-box .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: #4292c6;
+}
+
+.instance-box .list-view {
+    -fx-background-color: #4292c6;
+}
+
+.instance-box .list-cell:hover {
+    -fx-text-fill: black;
+    -fx-background-color: #2171b5;
+}
+
+.instance-box .list-view .list-cell:focused {
+  -fx-text-fill: black;
+}
+
+.instance-box .track {
+    -fx-background-color: #3674B5;
+}
+
+.instance-box .thumb {
+    -fx-background-color: #A1E3F9;
+}
+
+.scroll-pane{
+   -fx-background-color:transparent;
+}
+
+.scroll-pane > .viewport {  //not .scrollpane but .scroll-pane
+   -fx-background-color: transparent;
+}
+
+.search-box
+ {
+    -fx-background-color: #4292c6;
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: white;
+}
+
+.mod-box {
+    -fx-background-color: #2171b5;
+}
+
+.add-btn {
+    -fx-background-color: #08519c;
+    -fx-text-fill: white;
+    -fx-padding: 5 10;
+}

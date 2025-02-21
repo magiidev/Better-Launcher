@@ -1,0 +1,79 @@
+.bg-image
+{
+    -fx-background-image: url("/images/ocean-background.png");
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
+
+.main-panel
+{
+    -fx-background-color: #4292c6;
+
+    /* Rayon de bordure appliqué seulement aux coins supérieurs */
+    -fx-background-radius: 10px 10px 0 0; /* Top-left, top-right, bottom-right, bottom-left */
+
+    /*-fx-border-color: #181818; Optionnel, si tu veux une bordure visible */
+    -fx-border-radius: 10px 10px 0 0;
+    -fx-border-width: 5px; /* Largeur de la bordure */
+}
+
+
+.bottom-panel
+{
+    -fx-background-color: #4292c6;
+    -fx-background-radius: 0 0 10px 10px; /* Top-left, top-right, bottom-right, bottom-left */
+
+    -fx-border-radius: 0 0 10px 10px;
+    -fx-border-width: 5px; /* Largeur de la bordure */
+
+    -fx-opacity: 0.7;
+}
+
+.no-account
+{
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+}
+
+.register-here
+{
+    -fx-text-fill: #69a7ed;
+    -fx-font-size: 14px;
+}
+
+.login-btn {
+    -fx-background-radius: 10px;
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-background-color: #2171b5;
+}
+
+.login-btn:hover {
+    -fx-background-color: #08519c;
+}
+
+.user-field {
+    -fx-background-color: #2171b5;
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: white;
+}
+
+.choose-connect-separator {
+    -fx-opacity: 30%;
+    -fx-background-color: #4B5945;
+}
+
+.choose-connection {
+    -fx-background-color: #4292c6;
+    -fx-font-size: 14px;
+    -fx-text-fill: #fff;
+}
+
+.microsoft-btn {
+    -fx-background-color: #fff;
+    -fx-border-radius: 0px;
+    -fx-background-insets: 0px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #fff;
+}

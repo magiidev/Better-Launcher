@@ -2,6 +2,7 @@ package com.magidev.betterlauncher.ui.panels.partials;
 
 import com.magidev.betterlauncher.ui.PanelManager;
 import com.magidev.betterlauncher.ui.panel.Panel;
+import com.magidev.betterlauncher.ui.utils.theme.ThemeManager;
 import com.magidev.betterlauncher.utils.Constants;
 import fr.flowarg.materialdesignfontfx.MaterialDesignIcon;
 import fr.flowarg.materialdesignfontfx.MaterialDesignIconView;
@@ -28,7 +29,13 @@ public class TopBar extends Panel
         super.init(panelManager);
 
         this.topBar = this.layout;
-        this.layout.setStyle("-fx-background-color: #A59D84;");
+
+        switch (ThemeManager.getCurrentTheme().getName())
+        {
+            case "Coffee" -> this.setTopBarStyle("-fx-background-color: #A59D84;");
+            case "Ocean" -> this.setTopBarStyle("-fx-background-color: #08519c;");
+        }
+
         setCanTakeAllWidth(this.topBar);
 
         /*
@@ -91,4 +98,9 @@ public class TopBar extends Panel
 
         topBarButton.getChildren().addAll(closeBtn, fullscreenBtn, minimizeBtn);
     }
+
+    public void setTopBarStyle(String style) {
+        this.layout.setStyle(style);
+    }
+
 }

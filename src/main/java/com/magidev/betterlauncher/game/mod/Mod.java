@@ -53,8 +53,8 @@ public class Mod
         modBox.setAlignment(Pos.TOP_LEFT);
         modBox.setPadding(new Insets(10));
         modBox.setSpacing(10);
-        modBox.setBackground(new Background(new BackgroundFill(Color.rgb(193, 186, 161), new CornerRadii(5), Insets.EMPTY)));
-        modBox.setBorder(new Border(new BorderStroke(Color.LIGHTGRAY, BorderStrokeStyle.SOLID, new CornerRadii(5), BorderWidths.DEFAULT)));
+        modBox.getStyleClass().add("mod-box");
+        modBox.setBorder(new Border(new BorderStroke(Color.TRANSPARENT, BorderStrokeStyle.SOLID, new CornerRadii(5), BorderWidths.DEFAULT)));
 
         ImageView iconImageView = new ImageView();
         iconImageView.setPreserveRatio(true);
@@ -84,7 +84,7 @@ public class Mod
 
         Button addButton = new Button("Add to " + currentInstance.getName());
         addButton.setFont(Font.font("Consolas", FontWeight.NORMAL, 14));
-        addButton.setStyle("-fx-background-color: #A59D84; -fx-text-fill: white; -fx-padding: 5 10;");
+        addButton.getStyleClass().add("add-btn");
         addButton.setCursor(Cursor.HAND);
 
         try

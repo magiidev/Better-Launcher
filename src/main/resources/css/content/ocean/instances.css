@@ -1,0 +1,91 @@
+.instances-layout {
+    -fx-background-color: #6baed6;
+}
+
+.instances-title {
+    -fx-text-fill: white;
+}
+
+.scroll-pane{
+   -fx-background-color:transparent;
+}
+
+
+.scroll-pane > .viewport {  //not .scrollpane but .scroll-pane
+   -fx-background-color: transparent;
+}
+
+.text-field {
+    -fx-background-color: #C1BAA1;
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+}
+
+.instance-btn {
+    -fx-background-radius: 10px;
+    -fx-font-size: 16px;
+    -fx-text-fill: #F5F5F5;
+    -fx-background-color: #2171b5;
+}
+
+.instance-btn:hover {
+    -fx-background-color: #2171b5;
+}
+
+.root {
+    -fx-background-radius: 15; /* Arrondir les coins */
+    -fx-border-radius: 15;     /* Arrondir également la bordure */
+    -fx-background-color: #4292c6;
+}
+
+.create-btn {
+    -fx-background-radius: 10px;
+    -fx-font-size: 16px;
+    -fx-text-fill: #F5F5F5;
+    -fx-background-color: #2171b5;
+}
+
+.create-btn:hover {
+    -fx-background-color: #2171b5;
+}
+
+.instance-box {
+    -fx-background-color: #4292c6;
+    -fx-background-radius: 5px;
+}
+
+.combo-box .arrow-button .arrow {
+    -fx-background-color: #2171b5;
+}
+
+.combo-box .list-view .list-cell {
+    -fx-text-fill: white;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: #4292c6;
+}
+
+.combo-box .list-view {
+    -fx-background-color: #4292c6;
+}
+
+.combo-box .list-cell:hover {
+    -fx-text-fill: black;
+    -fx-background-color: #2171b5;
+}
+
+.combo-box .list-view .list-cell:focused {
+  -fx-text-fill: black;
+}
+
+.combo-box .track {
+    -fx-background-color: #3674B5;
+}
+
+.combo-box .thumb {
+    -fx-background-color: #A1E3F9;
+}
+
+

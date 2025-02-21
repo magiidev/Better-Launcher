@@ -56,3 +56,13 @@
     -fx-text-fill: white;
     -fx-prompt-text-fill: white;
 }
+
+.mod-box {
+    -fx-background-color: #C1BAA1;
+}
+
+.add-btn {
+    -fx-background-color: #A59D84;
+    -fx-text-fill: white;
+    -fx-padding: 5 10;
+}

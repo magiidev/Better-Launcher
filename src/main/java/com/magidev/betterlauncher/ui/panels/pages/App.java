@@ -4,6 +4,7 @@ import com.magidev.betterlauncher.Launcher;
 import com.magidev.betterlauncher.ui.PanelManager;
 import com.magidev.betterlauncher.ui.panel.Panel;
 import com.magidev.betterlauncher.ui.panels.pages.content.*;
+import com.magidev.betterlauncher.ui.utils.theme.ThemeManager;
 import com.magidev.betterlauncher.utils.Constants;
 import com.magidev.betterlauncher.ui.utils.lang.LanguageManager;
 import fr.flowarg.materialdesignfontfx.MaterialDesignIcon;
@@ -42,7 +43,7 @@ public class App extends Panel
 
     @Override
     public String getStylesheetPath() {
-        return "css/app.css";
+        return "css/" + ThemeManager.getCurrentTheme().getName().toLowerCase() + "/app.css";
     }
 
     @Override

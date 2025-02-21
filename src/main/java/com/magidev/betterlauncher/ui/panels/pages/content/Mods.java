@@ -7,6 +7,7 @@ import com.magidev.betterlauncher.game.fetchers.CurseForgeFetcher;
 import com.magidev.betterlauncher.game.mod.ModLoader;
 import com.magidev.betterlauncher.ui.PanelManager;
 import com.magidev.betterlauncher.ui.utils.lang.LanguageManager;
+import com.magidev.betterlauncher.ui.utils.theme.ThemeManager;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.geometry.Insets;
@@ -50,7 +51,7 @@ public class Mods extends ContentPanel {
 
     @Override
     public String getStylesheetPath() {
-        return "css/content/mods.css";
+        return "css/content/" + ThemeManager.getCurrentTheme().getName().toLowerCase() + "/mods.css";
     }
 
     @Override

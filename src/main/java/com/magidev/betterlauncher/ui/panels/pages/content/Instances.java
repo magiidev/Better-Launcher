@@ -7,6 +7,7 @@ import com.magidev.betterlauncher.game.instance.Instance;
 import com.magidev.betterlauncher.game.instance.InstanceManager;
 import com.magidev.betterlauncher.ui.PanelManager;
 import com.magidev.betterlauncher.ui.utils.lang.LanguageManager;
+import com.magidev.betterlauncher.ui.utils.theme.ThemeManager;
 import fr.flowarg.materialdesignfontfx.MaterialDesignIcon;
 import fr.flowarg.materialdesignfontfx.MaterialDesignIconView;
 import fr.theshark34.openlauncherlib.util.Saver;
@@ -48,7 +49,7 @@ public class Instances extends ContentPanel
     @Override
     public String getStylesheetPath()
     {
-        return "css/content/instances.css";
+        return "css/content/" + ThemeManager.getCurrentTheme().getName().toLowerCase() + "/instances.css";
     }
 
     @Override
@@ -105,8 +106,8 @@ public class Instances extends ContentPanel
         instanceBox.setAlignment(Pos.TOP_LEFT);
         instanceBox.setPadding(new Insets(10));
         instanceBox.setSpacing(5);
-        instanceBox.setBackground(new Background(new BackgroundFill(Color.rgb(193, 186, 161), new CornerRadii(5), Insets.EMPTY)));
-        instanceBox.setBorder(new Border(new BorderStroke(Color.LIGHTGRAY, BorderStrokeStyle.SOLID, new CornerRadii(5), BorderWidths.DEFAULT)));
+        instanceBox.setBorder(new Border(new BorderStroke(Color.TRANSPARENT, BorderStrokeStyle.SOLID, new CornerRadii(5), BorderWidths.DEFAULT)));
+        instanceBox.getStyleClass().add("instance-box");
 
         Label nameLabel = new Label(instance.getName());
         nameLabel.setFont(Font.font("Consolas", FontWeight.BOLD, 20));
@@ -276,7 +277,7 @@ public class Instances extends ContentPanel
 
         // Créer la scène pour la nouvelle fenêtre
         Scene newInstanceScene = new Scene(layout);
-        newInstanceScene.getStylesheets().add("css/content/instances.css"); // Assurez-vous que le chemin vers le CSS est correct
+        newInstanceScene.getStylesheets().add("css/content/ocean/instances.css"); // Assurez-vous que le chemin vers le CSS est correct
         newInstanceScene.setFill(Color.TRANSPARENT);
         newInstanceWindow.setScene(newInstanceScene);
         newInstanceWindow.setTitle(LanguageManager.get("create-instance"));

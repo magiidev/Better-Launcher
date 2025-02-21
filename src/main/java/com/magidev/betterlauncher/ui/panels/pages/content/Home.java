@@ -8,6 +8,7 @@ import com.magidev.betterlauncher.game.instance.Instance;
 import com.magidev.betterlauncher.game.instance.InstanceManager;
 import com.magidev.betterlauncher.ui.PanelManager;
 import com.magidev.betterlauncher.ui.utils.lang.LanguageManager;
+import com.magidev.betterlauncher.ui.utils.theme.ThemeManager;
 import fr.flowarg.flowupdater.download.DownloadList;
 import fr.flowarg.flowupdater.download.IProgressCallback;
 import fr.flowarg.flowupdater.download.Step;
@@ -17,6 +18,7 @@ import fr.theshark34.openlauncherlib.util.Saver;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.VPos;
+import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
@@ -47,7 +49,7 @@ public class Home extends ContentPanel
 
     @Override
     public String getStylesheetPath() {
-        return "css/content/home.css";
+        return "css/content/" + ThemeManager.getCurrentTheme().getName().toLowerCase() + "/home.css";
     }
 
     @Override
@@ -99,6 +101,7 @@ public class Home extends ContentPanel
         setCenterV(playBtn);
         playBtn.getStyleClass().add("play-btn");
         playBtn.setGraphic(playIcon);
+        playBtn.setCursor(Cursor.HAND);
         playBtn.setOnMouseClicked(e -> {
             if(instanceBox.getValue() == null)
             {

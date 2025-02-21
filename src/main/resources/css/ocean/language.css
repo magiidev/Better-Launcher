@@ -1,0 +1,26 @@
+.bg-image
+{
+    -fx-background-image: url("/images/ocean-background.png");
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
+
+.flag-panel
+{
+    -fx-background-color: #4292c6;
+
+    /* Rayon de bordure appliqué seulement aux coins supérieurs */
+    -fx-background-radius: 10px 10px 10px 10px; /* Top-left, top-right, bottom-right, bottom-left */
+
+    /*-fx-border-color: #181818; Optionnel, si tu veux une bordure visible */
+    -fx-border-radius: 10px 10px 10px 10px;
+    -fx-border-width: 5px; /* Largeur de la bordure */
+}
+
+.scroll-pane{
+   -fx-background-color:transparent;
+}
+
+.scroll-pane > .viewport {  //not .scrollpane but .scroll-pane
+   -fx-background-color: transparent;
+}

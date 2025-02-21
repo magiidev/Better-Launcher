@@ -21,6 +21,7 @@ public class PanelManager
     private final Stage stage;
     private GridPane layout;
     private final GridPane contentPane = new GridPane();
+    private TopBar topBar;
 
     public PanelManager(Launcher launcher, Stage stage)
     {
@@ -47,7 +48,7 @@ public class PanelManager
         } else {
             this.stage.initStyle(StageStyle.UNDECORATED);
 
-            TopBar topBar = new TopBar();
+            topBar = new TopBar();
             BorderlessScene scene = new BorderlessScene(this.stage, StageStyle.UNDECORATED, this.layout);
             scene.setResizable(true);
             scene.setMoveControl(topBar.getLayout());
@@ -94,5 +95,10 @@ public class PanelManager
     public Launcher getLauncher()
     {
         return launcher;
+    }
+
+    public TopBar getTopBar()
+    {
+        return topBar;
     }
 }

@@ -6,6 +6,7 @@ import com.magidev.betterlauncher.ui.PanelManager;
 import com.magidev.betterlauncher.ui.panel.Panel;
 import com.magidev.betterlauncher.ui.panels.pages.App;
 import com.magidev.betterlauncher.ui.panels.pages.Login;
+import com.magidev.betterlauncher.ui.utils.theme.ThemeManager;
 import fr.theshark34.openlauncherlib.util.Saver;
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
@@ -13,6 +14,7 @@ import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.Separator;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 
@@ -27,7 +29,7 @@ public class LanguagePanel extends Panel {
 
     @Override
     public String getStylesheetPath() {
-        return "css/language.css";
+        return "css/" + ThemeManager.getCurrentTheme().getName().toLowerCase() + "/language.css";
     }
 
     @Override
@@ -54,13 +56,18 @@ public class LanguagePanel extends Panel {
         flag.getStyleClass().add("flag-panel");
 
         // Choose Language Label
-        Label chooseLanguage = new Label("Choose your language");
+        Label chooseLanguage = new Label(LanguageManager.get("choose-your-language"));
         setCanTakeAllSize(chooseLanguage);
         setAlignement(chooseLanguage, VPos.TOP, HPos.CENTER);
         chooseLanguage.setStyle("-fx-text-fill: #ffffff; -fx-font-size: 24px;");
         chooseLanguage.setTranslateY(15);  // Optionnel, pour décaler le label
 
-        flag.getChildren().addAll(chooseLanguage);
+        Separator separator = new Separator();
+        setCanTakeAllSize(separator);
+        setAlignement(separator, VPos.TOP, HPos.CENTER);
+        separator.setTranslateY(65);
+
+        flag.getChildren().addAll(chooseLanguage, separator);
 
         // FlowPane to hold all the flag buttons
         FlowPane languageList = new FlowPane();
@@ -85,7 +92,7 @@ public class LanguagePanel extends Panel {
         scrollPane.getStyleClass().add("scroll-pane");
 
         // Descendre le ScrollPane pour le séparer du label
-        scrollPane.setTranslateY(30);  // Décale le ScrollPane de 30px vers le bas (ajuste cette valeur selon ton besoin)
+        scrollPane.setTranslateY(60);  // Décale le ScrollPane de 30px vers le bas (ajuste cette valeur selon ton besoin)
 
         // Ajouter le ScrollPane au layout
         flag.getChildren().add(scrollPane);

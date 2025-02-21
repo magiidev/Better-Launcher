@@ -5,6 +5,7 @@ import com.magidev.betterlauncher.Main;
 import com.magidev.betterlauncher.ui.PanelManager;
 import com.magidev.betterlauncher.ui.panel.Panel;
 import com.magidev.betterlauncher.ui.utils.lang.LanguageManager;
+import com.magidev.betterlauncher.ui.utils.theme.ThemeManager;
 import com.magidev.betterlauncher.utils.LauncherUtils;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthResult;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthenticationException;
@@ -39,7 +40,7 @@ public class Login extends Panel
     @Override
     public String getStylesheetPath()
     {
-        return "css/login.css";
+        return "css/" + ThemeManager.getCurrentTheme().getName().toLowerCase() + "/login.css";
     }
 
     @Override
@@ -109,7 +110,7 @@ public class Login extends Panel
         TextField userField = new TextField();
         setCanTakeAllSize(userField);
         setAlignement(userField, VPos.TOP, HPos.LEFT);
-        userField.setStyle("-fx-background-color: #C1BAA1; -fx-font-size: 16px; -fx-text-fill: white; -fx-prompt-text-fill: white;");
+        userField.getStyleClass().add("user-field");
         userField.setPromptText(LanguageManager.get("userField"));
         userField.setMaxWidth(325);
         userField.setMaxHeight(40);
@@ -145,13 +146,13 @@ public class Login extends Panel
         chooseConnectSeparator.setTranslateY(10);
         chooseConnectSeparator.setMinWidth(325);
         chooseConnectSeparator.setMaxWidth(325);
-        chooseConnectSeparator.setStyle("-fx-opacity: 30%; -fx-background-color: #4B5945;");
+        chooseConnectSeparator.getStyleClass().add("choose-connect-separator");
 
         Button chooseConnection = new Button(LanguageManager.get("loginWith"));
         setCanTakeAllSize(chooseConnection);
         setAlignement(chooseConnection, VPos.CENTER, HPos.CENTER);
         chooseConnection.setTranslateY(10);
-        chooseConnection.setStyle("-fx-background-color: #D7D3BF; -fx-font-size: 14px; -fx-text-fill: #fff;");
+        chooseConnection.getStyleClass().add("choose-connection");
 
         Image logoMicrosoft = new Image(Main.class.getResource("/images/microsoft.png").toExternalForm());
         ImageView imageViewMicrosoft = new ImageView(logoMicrosoft);
@@ -164,7 +165,7 @@ public class Login extends Panel
         microsoftButton.setTranslateY(60);
         microsoftButton.setMaxWidth(250);
         microsoftButton.setMinHeight(40);
-        microsoftButton.setStyle("-fx-background-color: #fff; -fx-border-radius: 0px; -fx-background-insets: 0px; -fx-font-size: 14px; -fx-text-fill: #fff;");
+        microsoftButton.getStyleClass().add("microsoft-btn");
         microsoftButton.setGraphic(imageViewMicrosoft);
         microsoftButton.setOnMouseEntered(e-> this.layout.setCursor(Cursor.HAND));
         microsoftButton.setOnMouseExited(e-> this.layout.setCursor(Cursor.DEFAULT));
