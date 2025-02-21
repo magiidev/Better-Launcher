@@ -28,7 +28,7 @@ Better-Launcher is an advanced Minecraft launcher offering numerous features to 
    ![Launcher Preview Instances](https://github.com/magiidev/Better-Launcher/tree/master/src/main/resources/images/instances.png?raw=true)
 2. **🛠️ Adding Mods**:
    - Use the mod manager to search, download, and activate mods with one click.
-   ![Launcher Preview Mods](https://github.com/magiidev/Better-Launcher/tree/master/src/main/resources/images/mods.png?raw=true)
+   - ![image alt](https://github.com/magiidev/Better-Launcher/blob/master/src/main/resources/images/mods.png?raw=true)
 3. **🎨 Customization**:
    - Choose a theme and configure your preferred language.
    ![Launcher Preview Home](https://github.com/magiidev/Better-Launcher/tree/master/src/main/resources/images/home.png?raw=true)
