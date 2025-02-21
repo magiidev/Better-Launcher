@@ -31,7 +31,7 @@ Better-Launcher is an advanced Minecraft launcher offering numerous features to 
    - ![image alt](https://github.com/magiidev/Better-Launcher/blob/master/src/main/resources/images/mods.png?raw=true)
 3. **🎨 Customization**:
    - Choose a theme and configure your preferred language.
-   - ![image alt](https://github.com/magiidev/Better-Launcher/tree/master/src/main/resources/images/home.png?raw=true)
+   - ![image alt](https://github.com/magiidev/Better-Launcher/blob/master/src/main/resources/images/home.png?raw=true)
 
 ## 🤝 Contributions
 
