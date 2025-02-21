@@ -1,6 +1,6 @@
 # 🎮 Better-Launcher 🚀
 
-Better-Launcher is an advanced Minecraft launcher offering numerous features to enhance your gaming experience. Whether you're a premium player (🔑 Microsoft) or using an unofficial version (💀 Crack), Better-Launcher allows you to enjoy Minecraft in an optimized way.
+Better-Launcher is an advanced Minecraft launcher offering numerous features to enhance your gaming experience. Whether you're a premium player (Microsoft) or using an unofficial version (Cracked), Better-Launcher allows you to enjoy Minecraft in an optimized way.
 
 ## ✨ Features
 
