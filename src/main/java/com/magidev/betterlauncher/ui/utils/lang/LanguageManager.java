@@ -5,24 +5,26 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LanguageManager {
-    private static Map<String, Language> languages = new HashMap<>();
+    private static final Map<String, Language> languages = new HashMap<>();
     public static Language currentLanguage;
 
     static {
-        // Automatically initialize languages at startup
+        // Charge les langues au démarrage
         addLanguage("English", "lang/english.properties");
         addLanguage("French", "lang/french.properties");
         addLanguage("Spanish", "lang/spanish.properties");
     }
 
-    private static void addLanguage(String name, String filePath) {
+    private static void addLanguage(String name, String resourcePath) {
         try {
-            Language lang = new Language(name, LanguageManager.class.getClassLoader().getResource(filePath).getPath());
+            Language lang = new Language(name, resourcePath); // Correction ici
             languages.put(name, lang);
             if (currentLanguage == null) {
-                currentLanguage = lang; // Set the first added language as default
+                currentLanguage = lang; // Définit la première langue comme langue par défaut
             }
         } catch (IOException e) {
+            System.err.println("Erreur lors du chargement de la langue: " + name + " (" + resourcePath + ")");
+            e.printStackTrace();
         }
     }
 
@@ -30,6 +32,7 @@ public class LanguageManager {
         if (languages.containsKey(name)) {
             currentLanguage = languages.get(name);
         } else {
+            System.err.println("Langue non trouvée: " + name);
         }
     }
 
@@ -40,17 +43,11 @@ public class LanguageManager {
         return currentLanguage.getTranslation(key);
     }
 
-    // Added method to get available languages
     public static String[] getAvailableLanguages() {
         return languages.keySet().toArray(new String[0]);
     }
 
-    // New method to get Language object by name
     public static Language getLanguageByName(String name) {
-        if (languages.containsKey(name)) {
-            return languages.get(name);
-        } else {
-            return null; // or throw an exception if you prefer
-        }
+        return languages.getOrDefault(name, null);
     }
 }

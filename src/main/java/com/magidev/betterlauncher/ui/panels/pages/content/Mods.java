@@ -37,11 +37,10 @@ public class Mods extends ContentPanel {
     private Label loadingIndicator;
     private ProgressIndicator bottomLoadingIndicator;
     private ProgressIndicator centralLoadingIndicator;
-    // Conteneur pour le label "Loading mods..." et le progress indicator (petit)
     private HBox loadingContainer;
 
     public Mods() {
-            curseForgeFetcher = new CurseForgeFetcher("$2a$10$46YfrDZjVZ9AP2h2XjxZ3.d3vspD2H1mQAXvrCfjS3Zb9MfRkqQni");
+        curseForgeFetcher = new CurseForgeFetcher("$2a$10$46YfrDZjVZ9AP2h2XjxZ3.d3vspD2H1mQAXvrCfjS3Zb9MfRkqQni");
     }
 
     @Override

@@ -1,21 +1,24 @@
 package com.magidev.betterlauncher.ui.utils.lang;
 
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class Language {
     private String name;
     private Properties translations;
 
-    public Language(String name, String filePath) throws IOException {
+    public Language(String name, String resourcePath) throws IOException {
         this.name = name;
         this.translations = new Properties();
-        loadTranslations(filePath);
+        loadTranslations(resourcePath);
     }
 
-    private void loadTranslations(String filePath) throws IOException {
-        try (FileInputStream input = new FileInputStream(filePath)) {
+    private void loadTranslations(String resourcePath) throws IOException {
+        try (InputStream input = getClass().getClassLoader().getResourceAsStream(resourcePath)) {
+            if (input == null) {
+                throw new IOException("Resource not found: " + resourcePath);
+            }
             translations.load(input);
         }
     }
