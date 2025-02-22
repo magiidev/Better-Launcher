@@ -22,6 +22,8 @@ import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -57,8 +59,6 @@ public class Home extends ContentPanel
     {
         super.init(panelManager);
 
-        InstanceManager instanceManager = InstanceManager.getInstance();
-
         RowConstraints rowConstraints = new RowConstraints();
         rowConstraints.setValignment(VPos.CENTER);
         rowConstraints.setMinHeight(75);
@@ -88,7 +88,19 @@ public class Home extends ContentPanel
 
         this.showPlayButton();
         this.showInstancesBox(boxPane);
+  //      this.addWebView();
     }
+
+    private void addWebView()
+    {
+     //   WebView webView = new WebView();
+      //  WebEngine webEngine = webView.getEngine();
+     //   webEngine.load("https://www.google.com");
+      //  setCanTakeAllSize(webView);
+
+       // this.layout.add(webView, 0, 1);
+    }
+
 
     private void showPlayButton()
     {

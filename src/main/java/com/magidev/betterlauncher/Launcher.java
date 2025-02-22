@@ -85,11 +85,21 @@ public class Launcher extends Application
     {
         this.logger.info("Starting launcher");
 
+        if (saver.get("theme") == null) {
+            saver.set("theme", "Ocean"); // Définir "Ocean" comme thème par défaut
+            saver.save();
+        }
+
         ThemeManager.currentTheme = ThemeManager.getTheme(saver.get("theme"));
 
         panelManager = new PanelManager(this, stage);
         panelManager.init();
 
+        verifyLang();
+    }
+
+    public void verifyLang()
+    {
         if (this.isUserAlreadyLoggedIn() && saver.get("lang") != null)
         {
             logger.info("Hello " + authInfos.getUsername());
