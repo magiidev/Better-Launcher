@@ -40,7 +40,7 @@ Better-Launcher is constantly evolving! Feel free to contribute by suggesting id
 ## 🎉 Credits
 
 - 🎨 **UI**: The inspiration of the UI comes from the tutorial by **[Bricklou](https://github.com/Bricklou)**.
-- 
+  
 Special thanks to the following libraries used in this project:
 
 - 🔐 **[OpenAuth](https://github.com/Litarvan/OpenAuth)** 
