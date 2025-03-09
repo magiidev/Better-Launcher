@@ -33,8 +33,6 @@
 }
 
 .root {
-    -fx-background-radius: 15; /* Arrondir les coins */
-    -fx-border-radius: 15;     /* Arrondir également la bordure */
     -fx-background-color: #D7D3BF;
 }
 
