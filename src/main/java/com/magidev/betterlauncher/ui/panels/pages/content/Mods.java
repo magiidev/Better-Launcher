@@ -31,7 +31,7 @@ public class Mods extends ContentPanel {
     private CurseForgeFetcher curseForgeFetcher;
     private int currentIndex = 0;
     private int currentIndexSearch = 0;
-    private final int pageSize = 20;
+    private final int pageSize = 9;
     private final int pageSizeSearch = 10;
     private boolean isLoading = false;
     private Label loadingIndicator;

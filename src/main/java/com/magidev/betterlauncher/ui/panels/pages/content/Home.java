@@ -59,6 +59,8 @@ public class Home extends ContentPanel
     {
         super.init(panelManager);
 
+        InstanceManager.getInstance();
+
         RowConstraints rowConstraints = new RowConstraints();
         rowConstraints.setValignment(VPos.CENTER);
         rowConstraints.setMinHeight(75);

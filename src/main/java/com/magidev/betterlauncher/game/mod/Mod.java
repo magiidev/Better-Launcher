@@ -30,13 +30,12 @@ public class Mod
     private final String author;
     private final int fileID;
     private final String iconURL;
-    private int dependencyID;
 
     private fr.flowarg.flowupdater.download.json.Mod mod;
 
     private final CurseForgeFetcher cff = new CurseForgeFetcher("$2a$10$46YfrDZjVZ9AP2h2XjxZ3.d3vspD2H1mQAXvrCfjS3Zb9MfRkqQni");
 
-    public Mod(String name, int id, String description, String author, int fileID, String iconURL, int dependencyID)
+    public Mod(String name, int id, String description, String author, int fileID, String iconURL)
     {
         this.name = name;
         this.id = id;
@@ -44,7 +43,6 @@ public class Mod
         this.author = author;
         this.fileID = fileID;
         this.iconURL = iconURL;
-        this.dependencyID = dependencyID;
     }
 
     public VBox createModView(Instance currentInstance)
@@ -111,11 +109,6 @@ public class Mod
             try
             {
                 currentInstance.downloadCurseMod(mod);
-
-                if(dependencyID != -1)
-                {
-                    currentInstance.downloadCurseMod(new CurseFileInfo(dependencyID, cff.getLatestModFile(dependencyID, currentInstance.getModLoader().toString(), currentInstance.getVersion())));
-                }
             } catch (Exception e)
             {
                 throw new RuntimeException(e);
@@ -147,32 +140,13 @@ public class Mod
         descriptionLabel.setStyle("-fx-text-fill: white;");
         descriptionLabel.setWrapText(true);
 
-        var dependencyName = cff.getModNameByID(dependencyID);
-        if(dependencyName != null && dependencyName.contains("Fabric API") && currentInstance.getModLoader() != ModLoader.FABRIC)
-        {
-            dependencyName = null;
-        }
-
-        Label dependencyLabel = new Label("Need Dependency: " + dependencyName);
-        dependencyLabel.setFont(Font.font("Consolas", FontWeight.NORMAL, 14));
-        dependencyLabel.setStyle("-fx-text-fill: white; -fx-background-color: rgba(255, 255, 255, 0.2); -fx-padding: 0 5 0 5;");
-        dependencyLabel.setPadding(new Insets(2, 5, 2, 5));
-
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
 
         HBox bottomBox = new HBox(10);
         bottomBox.setAlignment(Pos.CENTER_LEFT);
 
-        if (dependencyName != null)
-        {
-            bottomBox.getChildren().addAll(descriptionLabel, spacer, dependencyLabel);
-        }
-        else
-        {
-            bottomBox.getChildren().addAll(descriptionLabel);
-        }
-
+        bottomBox.getChildren().addAll(descriptionLabel);
         modBox.getChildren().addAll(headerBox, bottomBox);
 
         return modBox;
@@ -209,8 +183,4 @@ public class Mod
         return iconURL;
     }
 
-    public int getDependencyID()
-    {
-        return dependencyID;
-    }
 }

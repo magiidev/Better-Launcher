@@ -188,44 +188,7 @@ public class CurseForgeFetcher {
                             latestFileId = getLatestModFile(mod.getInt("id"), modLoaderName, gameVersion);
                         }
 
-                        int dependencyId = -1;
-                        if (mod.has("latestFiles")) {
-                            JSONArray filesIndexes = mod.getJSONArray("latestFiles");
-                            for (int j = 0; j < filesIndexes.length(); j++) {
-                                JSONObject fileIndex = filesIndexes.getJSONObject(j);
-
-                                JSONArray gameVersions = fileIndex.optJSONArray("gameVersions");
-                                boolean isVersionCompatible = false;
-
-                                if (gameVersions != null) {
-                                    for (int v = 0; v < gameVersions.length(); v++) {
-                                        if (gameVersions.getString(v).equals(gameVersion)) {
-                                            isVersionCompatible = true;
-                                            break;
-                                        }
-                                    }
-                                }
-
-                                if (isVersionCompatible && fileIndex.has("dependencies")) {
-                                    JSONArray dependencies = fileIndex.getJSONArray("dependencies");
-
-                                    for (int k = 0; k < dependencies.length(); k++) {
-                                        JSONObject dependency = dependencies.getJSONObject(k);
-
-                                        dependencyId = dependency.optInt("modId", -1);
-                                        break;
-                                    }
-                                }
-
-                                if (!isVersionCompatible) {
-                                    dependencyId = -1;
-                                    break;
-                                }
-                            }
-                        }
-
-
-                        modsList.add(new Mod(name, mod.getInt("id"), description, author, latestFileId, iconUrl, dependencyId));
+                        modsList.add(new Mod(name, mod.getInt("id"), description, author, latestFileId, iconUrl));
                     }
                 }
             }
@@ -302,50 +265,7 @@ public class CurseForgeFetcher {
                             latestFileId = getLatestModFile(mod.getInt("id"), modLoaderName, gameVersion);
                         }
 
-                        int dependencyId = -1;
-                        if (mod.has("latestFiles")) {
-                            JSONArray filesIndexes = mod.getJSONArray("latestFiles");
-                            for (int j = 0; j < filesIndexes.length(); j++) {
-                                JSONObject fileIndex = filesIndexes.getJSONObject(j);
-
-                                JSONArray gameVersions = fileIndex.optJSONArray("gameVersions");
-                                boolean isVersionCompatible = false;
-
-                                if (gameVersions != null) {
-                                    for (int v = 0; v < gameVersions.length(); v++) {
-                                        if (gameVersions.getString(v).equals(gameVersion)) {
-                                            isVersionCompatible = true;
-                                            break;
-                                        }
-                                    }
-                                }
-
-                                if (isVersionCompatible && fileIndex.has("dependencies")) {
-                                    JSONArray dependencies = fileIndex.getJSONArray("dependencies");
-
-                                    for (int k = 0; k < dependencies.length(); k++) {
-                                        JSONObject dependency = dependencies.getJSONObject(k);
-
-                                        if (dependencyId != 238222)
-                                        {
-                                            dependencyId = dependency.optInt("modId", -1);
-                                        }
-                                        else
-                                        {
-                                            dependencyId = -1;
-                                        }
-                                        break;
-                                    }
-                                }
-
-                                if (!isVersionCompatible) {
-                                    dependencyId = -1;
-                                    break;
-                                }
-                            }
-                        }
-
-                        modsList.add(new Mod(name, mod.getInt("id"), description, author, latestFileId, iconUrl, dependencyId));
+                        modsList.add(new Mod(name, mod.getInt("id"), description, author, latestFileId, iconUrl));
                     }
                 }
             }

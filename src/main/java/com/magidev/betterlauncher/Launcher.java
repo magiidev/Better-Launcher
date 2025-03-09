@@ -2,6 +2,7 @@ package com.magidev.betterlauncher;
 
 import com.magidev.betterlauncher.ui.PanelManager;
 import com.magidev.betterlauncher.ui.panels.pages.App;
+import com.magidev.betterlauncher.ui.utils.boostrap.BoostrapPanel;
 import com.magidev.betterlauncher.ui.utils.lang.LanguagePanel;
 import com.magidev.betterlauncher.ui.panels.pages.Login;
 import com.magidev.betterlauncher.ui.utils.theme.ThemeManager;
@@ -84,6 +85,9 @@ public class Launcher extends Application
     public void start(Stage stage) throws Exception
     {
         this.logger.info("Starting launcher");
+        this.logger.info("Looking for updates...");
+
+      //  new BoostrapPanel().launch();
 
         if (saver.get("theme") == null) {
             saver.set("theme", "Ocean"); // Définir "Ocean" comme thème par défaut
