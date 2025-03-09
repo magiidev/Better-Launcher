@@ -20,6 +20,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -237,16 +238,15 @@ public class Instances extends ContentPanel
     private void handleCreateInstanceButtonClick() {
         // Créer une nouvelle fenêtre principale (Stage)
         Stage newInstanceWindow = new Stage();
-        newInstanceWindow.initStyle(StageStyle.TRANSPARENT);
+        newInstanceWindow.getIcons().add(new Image("/images/icon.png"));
         VBox layout = new VBox(10);
         layout.setPadding(new Insets(20));
         layout.setAlignment(Pos.CENTER);
 
         // Champ de texte pour le nom de l'instance
         TextField nameField = new TextField();
-        nameField.setPromptText(LanguageManager.get("enter-instance-name"));
         nameField.setFont(Font.font("Arial", FontWeight.NORMAL, 14));
-        nameField.setStyle("-fx-text-fill: black;");
+        nameField.setStyle("-fx-text-fill: white;");
         nameField.getStyleClass().add("text-field");
 
         // ComboBox pour choisir la version
@@ -265,22 +265,22 @@ public class Instances extends ContentPanel
         // Bouton pour créer l'instance
         Button createButton = new Button(LanguageManager.get("create"));
         createButton.setDefaultButton(true);
+        createButton.setCursor(Cursor.HAND);
         createButton.getStyleClass().add("create-btn");
 
         // Ajouter les composants à la mise en page
         layout.getChildren().addAll(
-                new Label(LanguageManager.get("instance-name") + ":"), nameField,
-                new Label("Version:"), versionChoiceBox,
-                new Label("ModLoader:"), modLoaderChoiceBox,
+                createLabel(LanguageManager.get("instance-name") + ":"), nameField,
+                createLabel("Version:"), versionChoiceBox,
+                createLabel("ModLoader:"), modLoaderChoiceBox,
                 createButton
         );
 
         // Créer la scène pour la nouvelle fenêtre
         Scene newInstanceScene = new Scene(layout);
-        newInstanceScene.getStylesheets().add("css/content/ocean/instances.css"); // Assurez-vous que le chemin vers le CSS est correct
-        newInstanceScene.setFill(Color.TRANSPARENT);
+        newInstanceScene.getStylesheets().add("css/content/" + ThemeManager.getCurrentTheme().getName().toLowerCase() + "/instances.css");
         newInstanceWindow.setScene(newInstanceScene);
-        newInstanceWindow.setTitle(LanguageManager.get("create-instance"));
+        newInstanceWindow.setTitle(LanguageManager.get("instances"));
         newInstanceWindow.setResizable(false);
 
         // Action lorsque le bouton "Create" est cliqué
@@ -306,5 +306,11 @@ public class Instances extends ContentPanel
         newInstanceWindow.show();
     }
 
+    private Label createLabel(String text) {
+        Label label = new Label(text);
+        label.setFont(Font.font("Consolas", FontWeight.NORMAL, 19));
+        label.setStyle("-fx-text-fill: white;");
+        return label;
+    }
 
 }

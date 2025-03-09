@@ -53,7 +53,6 @@ public class PanelManager
             scene.setResizable(true);
             scene.setMoveControl(topBar.getLayout());
             scene.removeDefaultCSS();
-
             this.stage.setScene(scene);
 
             RowConstraints topPaneContraints = new RowConstraints();

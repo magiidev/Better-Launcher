@@ -16,7 +16,7 @@
 }
 
 .text-field {
-    -fx-background-color: #C1BAA1;
+    -fx-background-color: #4292c6;
     -fx-font-size: 16px;
     -fx-text-fill: white;
 }
@@ -33,9 +33,7 @@
 }
 
 .root {
-    -fx-background-radius: 15; /* Arrondir les coins */
-    -fx-border-radius: 15;     /* Arrondir également la bordure */
-    -fx-background-color: #4292c6;
+    -fx-background-color: #6baed6;
 }
 
 .create-btn {
@@ -54,38 +52,44 @@
     -fx-background-radius: 5px;
 }
 
+.combo-box {
+    -fx-background-color: #4292c6;
+}
+
 .combo-box .arrow-button .arrow {
-    -fx-background-color: #2171b5;
+    -fx-background-color: #6baed6;
 }
 
 .combo-box .list-view .list-cell {
     -fx-text-fill: white;
+    -fx-background-color: #6baed6;
 }
 
 .combo-box .list-cell {
     -fx-text-fill: white;
-    -fx-background-color: #4292c6;
 }
 
 .combo-box .list-view {
-    -fx-background-color: #4292c6;
+    -fx-background-color: #6baed6;
 }
 
 .combo-box .list-cell:hover {
-    -fx-text-fill: black;
-    -fx-background-color: #2171b5;
+    -fx-text-fill: white;
+    -fx-background-color: #4292c6;
 }
 
 .combo-box .list-view .list-cell:focused {
-  -fx-text-fill: black;
+    -fx-text-fill: black;
 }
 
 .combo-box .track {
-    -fx-background-color: #3674B5;
+    -fx-background-color: #6baed6;
 }
 
 .combo-box .thumb {
-    -fx-background-color: #A1E3F9;
+    -fx-background-color: #4292c6;
 }
+
+
 
 

@@ -52,7 +52,6 @@ public class Mod
         modBox.setPadding(new Insets(10));
         modBox.setSpacing(10);
         modBox.getStyleClass().add("mod-box");
-        modBox.setBorder(new Border(new BorderStroke(Color.TRANSPARENT, BorderStrokeStyle.SOLID, new CornerRadii(5), BorderWidths.DEFAULT)));
 
         ImageView iconImageView = new ImageView();
         iconImageView.setPreserveRatio(true);
