@@ -37,6 +37,14 @@ Better-Launcher is an advanced Minecraft launcher offering numerous features to 
 
 Better-Launcher is constantly evolving! Feel free to contribute by suggesting ideas or reporting bugs on our [📌 GitHub](#).
 
+## 🎉 Credits
+
+Special thanks to the following libraries used in this project:
+
+- 🔐 **[OpenAuth](https://github.com/Litarvan/OpenAuth)** 
+- 🚀 **[FlowUpdater](https://github.com/Flowarg/FlowUpdater)** 
+- 🖥️ **[OpenLauncherLib](https://github.com/Flowarg/OpenLauncherLib)** 
+
 ## 📜 License
 
 This project is distributed under the **Apache 2.0** license. See the `LICENSE` file for more details.
@@ -44,4 +52,3 @@ This project is distributed under the **Apache 2.0** license. See the `LICENSE` 
 ---
 
 Enjoy Minecraft like never before with **Better-Launcher**! 🎮🚀
-
