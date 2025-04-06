@@ -31,13 +31,13 @@ public class Mods extends ContentPanel {
     private CurseForgeFetcher curseForgeFetcher;
     private int currentIndex = 0;
     private int currentIndexSearch = 0;
-    private final int pageSize = 9;
+    private final int pageSize = 10;
     private final int pageSizeSearch = 10;
     private boolean isLoading = false;
     private Label loadingIndicator;
     private ProgressIndicator bottomLoadingIndicator;
-    private ProgressIndicator centralLoadingIndicator;
     private HBox loadingContainer;
+    private ScrollPane scrollPane;
 
     public Mods() {
         curseForgeFetcher = new CurseForgeFetcher("$2a$10$46YfrDZjVZ9AP2h2XjxZ3.d3vspD2H1mQAXvrCfjS3Zb9MfRkqQni");
@@ -65,11 +65,6 @@ public class Mods extends ContentPanel {
         StackPane mainContainer = createMainContainer(mainContent);
         layout.getChildren().add(mainContainer);
 
-        // Ajout du gros progress indicator central
-        centralLoadingIndicator = createCentralLoadingIndicator();
-        mainContainer.getChildren().add(centralLoadingIndicator);
-        StackPane.setAlignment(centralLoadingIndicator, Pos.CENTER);
-
         // Ajout du titre
         Label title = createTitle();
         mainContent.getChildren().add(title);
@@ -84,8 +79,9 @@ public class Mods extends ContentPanel {
         // Création du conteneur de mods et du ScrollPane
         modsBox = new VBox(10);
         modsBox.setAlignment(Pos.TOP_CENTER);
-        ScrollPane scrollPane = createModsScrollPane(modsBox);
+        scrollPane = createModsScrollPane(modsBox);
         mainContent.getChildren().add(scrollPane);
+        Platform.runLater(() -> scrollPane.requestLayout());
 
         // Événement de sélection d'une instance
         instancesBox.setOnAction(event -> {
@@ -115,15 +111,8 @@ public class Mods extends ContentPanel {
     private StackPane createMainContainer(VBox mainContent) {
         StackPane container = new StackPane();
         container.getChildren().add(mainContent);
+        VBox.setVgrow(mainContent, Priority.ALWAYS);
         return container;
-    }
-
-    // Crée le gros progress indicator central
-    private ProgressIndicator createCentralLoadingIndicator() {
-        ProgressIndicator pi = new ProgressIndicator();
-        pi.setMaxSize(100, 100);
-        pi.setVisible(false);
-        return pi;
     }
 
     // Crée le titre "Mods"
@@ -205,14 +194,16 @@ public class Mods extends ContentPanel {
                 loadMoreMods();
             }
         });
+        VBox.setVgrow(modsBox, Priority.ALWAYS);
         VBox.setVgrow(scrollPane, Priority.ALWAYS);
+
         scrollPane.getStyleClass().add("scroll-pane");
         return scrollPane;
     }
 
     // Remplit le ComboBox avec les instances compatibles
     private void populateInstancesComboBox() {
-        List<ModLoader> modLoaders = Arrays.asList(ModLoader.FORGE, ModLoader.NEOFORGE, ModLoader.FABRIC);
+        List<ModLoader> modLoaders = Arrays.asList(ModLoader.FORGE, ModLoader.NEOFORGE, ModLoader.FABRIC, ModLoader.SODIUM);
         List<String> instanceNames = new ArrayList<>();
         for (Instance instance : InstanceManager.getInstances()) {
             if (modLoaders.contains(instance.getModLoader())) {
@@ -239,9 +230,9 @@ public class Mods extends ContentPanel {
                             pageSize
                     );
                     if (!mods.isEmpty()) {
-                        Platform.runLater(() -> {
-                            mods.forEach(mod -> modsBox.getChildren().add(mod.createModView(currentInstance)));
-                        });
+                        Platform.runLater(() -> mods.forEach(mod -> modsBox.getChildren().add(mod.createModView(currentInstance))));
+                        System.out.println("ModsBox Height: " + modsBox.getHeight());
+                        System.out.println("ScrollPane Viewport Height: " + scrollPane.getViewportBounds().getHeight());
                         currentIndex += mods.size();
                     }
                     return null;
@@ -279,6 +270,8 @@ public class Mods extends ContentPanel {
                 );
                 if (!mods.isEmpty()) {
                     Platform.runLater(() -> mods.forEach(mod -> modsBox.getChildren().add(mod.createModView(currentInstance))));
+                    System.out.println("ModsBox Height: " + modsBox.getHeight());
+                    System.out.println("ScrollPane Viewport Height: " + scrollPane.getViewportBounds().getHeight());
                     currentIndex += mods.size();
                 }
                 return null;

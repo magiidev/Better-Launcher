@@ -219,13 +219,19 @@ public class Home extends ContentPanel
         };
     }
 
-    public void checkJava()
-    {
+    public void checkJava() {
         int[] javaVersions = {8, 16, 17, 21};
-
         boolean isAnyVersionMissing = false;
 
-        // Vérification de chaque version Java
+        // Prepare UI for download progress
+        Platform.runLater(() -> {
+            boxPane.getChildren().clear();
+            setProgress(0, 1);
+            boxPane.getChildren().addAll(progressBar, stepLabel, fileLabel);
+            stepLabel.setText("Checking Java versions...");
+        });
+
+        // Checking each Java version
         for (int version : javaVersions) {
             Path javaPath = JavaDownloader.getJavaPath(String.valueOf(version));
             if (!Files.exists(javaPath)) {
@@ -238,11 +244,15 @@ public class Home extends ContentPanel
 
         if (isAnyVersionMissing) {
             System.out.println("One or more Java versions are missing. Downloading all versions...");
+            Platform.runLater(() -> stepLabel.setText("Downloading missing Java versions please wait... (can take multiples minutes)"));
+
             JavaDownloader.downloadAllJavaVersions();
         } else {
             System.out.println("All Java versions are already available.");
+            Platform.runLater(() -> stepLabel.setText("All Java versions are up to date!"));
         }
     }
+
 
     public void setStatus(String status) {
         this.stepLabel.setText(status);

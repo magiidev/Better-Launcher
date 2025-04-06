@@ -158,7 +158,7 @@ public class Instances extends ContentPanel
 
         if (instance.getModLoader().equals(ModLoader.FORGE) ||
                 instance.getModLoader().equals(ModLoader.NEOFORGE) ||
-                instance.getModLoader().equals(ModLoader.FABRIC))
+                instance.getModLoader().equals(ModLoader.FABRIC) || instance.getModLoader().equals(ModLoader.SODIUM))
         {
 
             Button modsBtn = new Button("Mods");
@@ -289,7 +289,7 @@ public class Instances extends ContentPanel
             String version = versionChoiceBox.getValue();
             ModLoader modLoader = modLoaderChoiceBox.getValue();
 
-            if (instanceName == null || instanceName.trim().isEmpty() || InstanceManager.getInstanceByName(instanceName) != null) {
+            if (instanceName == null || instanceName.trim().isEmpty() || InstanceManager.getInstanceByName(instanceName) != null || instanceName.contains(" ")) {
                 new Alert(Alert.AlertType.ERROR, LanguageManager.get("instance-error")).showAndWait();
                 return;
             }

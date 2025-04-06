@@ -108,27 +108,27 @@ public class Game
 
         if(doesTweak(currentInstance.getVersion()))
         {
-                forge = new ForgeVersionBuilder()
-                        .withForgeVersion(forgeVersion + "-" + currentInstance.getVersion())
-                        .build();
+            forge = new ForgeVersionBuilder()
+                    .withForgeVersion(forgeVersion + "-" + currentInstance.getVersion())
+                    .build();
 
         }
         else if(currentInstance.getVersion().equals("1.10"))
         {
-                forge = new ForgeVersionBuilder()
-                        .withForgeVersion(forgeVersion + "-1.10.0")
-                        .build();
+            forge = new ForgeVersionBuilder()
+                    .withForgeVersion(forgeVersion + "-1.10.0")
+                    .build();
         }
         else
         {
-                forge = new ForgeVersionBuilder()
-                        .withForgeVersion(forgeVersion).build();
+            forge = new ForgeVersionBuilder()
+                    .withForgeVersion(forgeVersion).build();
 
         }
 
         Path javaHome = null;
 
-        if (Version.gen(version).isBetweenOrEqual(Version.gen("1.21"), Version.gen("1.21.4")))
+        if (Version.gen(version).isBetweenOrEqual(Version.gen("1.21"), Version.gen("1.21.5")))
         {
             javaHome = JavaDownloader.getJavaPath("21");
         }
@@ -199,7 +199,7 @@ public class Game
 
         Path javaHome = null;
 
-        if (Version.gen(version).isBetweenOrEqual(Version.gen("1.21"), Version.gen("1.21.4")))
+        if (Version.gen(version).isBetweenOrEqual(Version.gen("1.21"), Version.gen("1.21.5")))
         {
             javaHome = JavaDownloader.getJavaPath("21");
         }
@@ -248,7 +248,7 @@ public class Game
 
         Path javaHome = null;
 
-        if (Version.gen(version).isBetweenOrEqual(Version.gen("1.21"), Version.gen("1.21.4")))
+        if (Version.gen(version).isBetweenOrEqual(Version.gen("1.21"), Version.gen("1.21.5")))
         {
             javaHome = JavaDownloader.getJavaPath("21");
         }
@@ -303,9 +303,11 @@ public class Game
         {
             final List<CurseFileInfo> modInfos = new ArrayList<>();
 
-            int fileID = curseForgeFetcher.getLatestModFile(394468, "Fabric", currentInstance.getVersion());
+            int fileIDSodium = curseForgeFetcher.getLatestModFile(394468, "Fabric", currentInstance.getVersion());
+            int fileIDLithium = curseForgeFetcher.getLatestModFile(360438, "Fabric", currentInstance.getVersion());
 
-            modInfos.add(new CurseFileInfo(394468, fileID)); // IronChest
+            modInfos.add(new CurseFileInfo(394468, fileIDSodium)); // Sodium
+            modInfos.add(new CurseFileInfo(360438, fileIDLithium)); // Lithium
 
             fabric = new FabricVersionBuilder()
                     .withCurseMods(modInfos)
@@ -314,7 +316,7 @@ public class Game
 
         Path javaHome = null;
 
-        if (Version.gen(version).isBetweenOrEqual(Version.gen("1.21"), Version.gen("1.21.4")))
+        if (Version.gen(version).isBetweenOrEqual(Version.gen("1.21"), Version.gen("1.21.5")))
         {
             javaHome = JavaDownloader.downloadJavaVersion("21");
         }
@@ -368,7 +370,7 @@ public class Game
 
         NoFramework noFramework;
 
-        if(Version.gen(currentInstance.getVersion()).isBetweenOrEqual(Version.gen("1.19"), Version.gen("1.21.4")))
+        if(Version.gen(currentInstance.getVersion()).isBetweenOrEqual(Version.gen("1.19"), Version.gen("1.21.5")))
         {
             noFramework = new NoFramework(
                     versionDir,

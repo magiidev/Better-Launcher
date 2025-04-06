@@ -133,7 +133,7 @@ public class CurseForgeFetcher {
     public List<Mod> getModsByLoaderAndVersion(String modLoader, String gameVersion, int startIndex, int pageSize) {
         if (modLoader.equals(ModLoader.FORGE.toString())) {
             modLoader = "1";  // 1 = Forge
-        } else if (modLoader.equals(ModLoader.FABRIC.toString())) {
+        } else if (modLoader.equals(ModLoader.FABRIC.toString()) || modLoader.equals(ModLoader.SODIUM.toString())) {
             modLoader = "4";  // 4 = Fabric
         } else if (modLoader.equals(ModLoader.NEOFORGE.toString())) {
             modLoader = "6";  // 6 = NeoForge
@@ -204,7 +204,7 @@ public class CurseForgeFetcher {
     {
         if (modLoader.equals(ModLoader.FORGE.toString())) {
             modLoader = "1";  // 1 = Forge
-        } else if (modLoader.equals(ModLoader.FABRIC.toString())) {
+        } else if (modLoader.equals(ModLoader.FABRIC.toString()) || modLoader.equals(ModLoader.SODIUM.toString())) {
             modLoader = "4";  // 4 = Fabric
         } else if (modLoader.equals(ModLoader.NEOFORGE.toString())) {
             modLoader = "6";  // 6 = NeoForge
